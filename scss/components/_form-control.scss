@@ -1,0 +1,184 @@
+.f-control {
+	appearance: none;
+	font: inherit;
+	color: inherit;
+	outline: none;
+	border-radius: 0;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	background-color: #f5f5f5;
+	color: $text-black-cl;
+	padding: 13px 15px;
+	height: 44px;
+	&::placeholder {
+		color: $border-cl;
+	}
+	&:disabled {
+		cursor: not-allowed;
+	}
+	&:focus {
+		outline: none;
+	}
+	&.wpcf7-not-valid {
+		border-color: #f00;
+	}
+}
+select {
+	&.f-control {
+		background: url(../images/select-icon.png) right 20px center / 10px
+			no-repeat;
+		padding-right: 35px;
+	}
+}
+textarea {
+	&.f-control {
+		display: block;
+		height: 120px;
+		padding: 15px 20px;
+		resize: none;
+	}
+}
+.custom-radio {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	input {
+		display: none;
+		&:checked ~ .checkmark {
+			border-color: $main-cl;
+			border: none;
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	.checkmark {
+		height: 20px;
+		width: 20px;
+		background-color: transparent;
+		border: 1px solid $border-cl;
+		border-radius: 100%;
+		margin-right: 5px;
+		flex-shrink: 0;
+		&::after {
+			content: '✔';
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			color: $white-cl;
+			border-radius: 100%;
+			background-color: #19e629;
+			@include mid-flex;
+		}
+	}
+}
+.custom-checkbox {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	input {
+		display: none;
+		&:checked ~ .checkmark {
+			border-color: $main-cl;
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	.checkmark {
+		height: 24px;
+		width: 24px;
+		background-color: transparent;
+		border: 1px solid $border-cl;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 10px;
+		flex-shrink: 0;
+		&::after {
+			content: '✔';
+			line-height: 1;
+			opacity: 0;
+			color: $second-cl;
+			font-size: 18px;
+		}
+	}
+}
+.custom-checkbox-2 {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	cursor: pointer;
+	input {
+		display: none;
+		&:checked ~ .checkmark {
+			background-color: $main-cl;
+			&::after {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 20px;
+		width: 20px;
+		background-color: #eee;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.2s;
+		&::after {
+			content: '✔';
+			transform: scale(0);
+			opacity: 0;
+			transition: inherit;
+		}
+	}
+}
+.custom-checkbox-3 {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	input {
+		display: none;
+		&:checked {
+			~ .checkmark {
+				border-color: $main-cl;
+				&::after {
+					opacity: 1;
+				}
+			}
+			~ span {
+				font-weight: bold;
+				color: #000;
+			}
+		}
+	}
+	span {
+		color: rgba($color: $black-cl, $alpha: 0.6);
+		@include lh(40, 15);
+	}
+	.checkmark {
+		height: 14px;
+		width: 14px;
+		padding: 3px;
+		background-color: transparent;
+		border: 1px solid $border-cl;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 10px;
+		flex-shrink: 0;
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: $second-cl;
+			opacity: 0;
+		}
+	}
+}

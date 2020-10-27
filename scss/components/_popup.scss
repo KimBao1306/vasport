@@ -1,0 +1,68 @@
+.popup-wrap {
+	display: none;
+}
+.popup {
+	position: relative;
+	margin: auto;
+	width: 600px;
+	max-width: 100%;
+	background-color: $white-cl;
+	&__close {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		z-index: 1;
+		@include mid-flex;
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		img {
+			width: inherit;
+			height: inherit;
+			object-fit: cover;
+		}
+	}
+	&__content {
+		display: flex;
+		> div {
+			width: 50%;
+		}
+	}
+	.right {
+		padding: 15px;
+	}
+	.f-group {
+		margin-bottom: 20px;
+	}
+	label {
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	input {
+		border-radius: 5px;
+		&::placeholder {
+			color: rgba($color: $black-cl, $alpha: 0.6);
+		}
+	}
+	button {
+		border: none;
+	}
+	@include max-media(500px) {
+		&__content {
+			flex-direction: column;
+		}
+		.left {
+			display: none;
+		}
+		.right {
+			width: 100%;
+		}
+		.f-group {
+			margin-bottom: 10px;
+		}
+	}
+}

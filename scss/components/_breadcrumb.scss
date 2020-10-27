@@ -1,0 +1,113 @@
+.sec-breadcrumb {
+	padding: 10px 0;
+	background-color: rgba($color: #191919, $alpha: 0.1);
+}
+.breadcrumb {
+	@include flex(row, flex-start, center, wrap);
+	li {
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 12px;
+			width: 6px;
+			height: 6px;
+			background-color: $second-cl;
+			@include br(100%);
+			@include transform(translateY(-50%));
+		}
+		&.--active a {
+			color: $black-cl;
+		}
+	}
+	li:last-child {
+		a {
+			padding: 0;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	a {
+		padding-right: 30px;
+		color: rgba($color: #000000, $alpha: 0.5);
+		@include transition($t1);
+		&:hover {
+			color: $second-cl;
+		}
+	}
+}
+.breadcrumb.breadcrumb-2 {
+	@include flex(row, flex-start, center, wrap);
+	li {
+		position: relative;
+		padding-bottom: 17px;
+		&::after {
+			top: calc(100% - 5px);
+			left: 0;
+			width: calc(100% - 30px);
+			height: 5px;
+			display: none;
+			transform: none;
+			border-radius: 0;
+			background-color: $second-cl;
+		}
+		&.--active {
+			&::after {
+				display: block;
+			}
+		}
+
+		a {
+			position: relative;
+			&::after {
+				position: absolute;
+				content: '/';
+				top: 50%;
+				transform: translateY(-50%);
+				right: 12px;
+				width: auto;
+				height: auto;
+				background: none;
+				font-weight: bold;
+				font-size: 21px;
+			}
+		}
+		&:last-child a::after {
+			display: none;
+		}
+	}
+	a {
+		color: $black-cl;
+		&:hover {
+			color: $second-cl;
+		}
+	}
+	@include max-media(1024px) {
+		li {
+			&::after {
+				width: calc(100% - 20px);
+			}
+			.main-title {
+				font-size: 18px;
+			}
+			a {
+				padding-right: 20px;
+				&::after {
+					right: 7px;
+				}
+			}
+		}
+	}
+	@include max-media(768px) {
+		li {
+			&::after {
+				top: 70%;
+			}
+			.main-title {
+				font-size: 16px;
+			}
+		}
+	}
+}

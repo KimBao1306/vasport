@@ -1,0 +1,284 @@
+.banner-2 .tabs {
+	bottom: -50px;
+	@include max-media(500px) {
+		bottom: -45px;
+	}
+}
+.info__content {
+	> .main-title {
+		margin-bottom: 20px;
+	}
+	> p {
+		margin-bottom: 20px;
+	}
+	p:not(.main-title) {
+		line-height: 1.6;
+	}
+}
+.info-1 {
+	position: relative;
+	padding-bottom: 92px;
+	z-index: -1;
+	overflow: hidden;
+	&__bg {
+		position: absolute;
+		top: -110px;
+		right: -375px;
+		width: auto;
+		height: 100%;
+		z-index: -2;
+	}
+
+	.content-tab {
+		max-width: calc(100% / 12 * 8);
+		h3 {
+			font-size: 25px;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+			max-width: calc(100% / 8 * 3);
+			@include lh(37, 25);
+		}
+		p {
+			line-height: 1.6;
+		}
+		.col {
+			width: 50%;
+		}
+	}
+	&__content {
+		position: relative;
+		overflow: hidden;
+		width: calc(100% / 12 * 8);
+	}
+	.mona-content {
+		h1 {
+			max-width: calc(100% / 8 * 3);
+			line-height: 1.48;
+		}
+		> div {
+			column-count: 2;
+			column-gap: 30px;
+		}
+		p {
+			display: inline-block;
+			@include lh(24, 15);
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.signature {
+		p {
+			margin: 0;
+		}
+		&-img {
+			margin-bottom: 7px;
+			img {
+				width: auto;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	@include max-media(1024px) {
+		padding-bottom: 60px;
+		.mona-content > h1 {
+			max-width: 80%;
+		}
+	}
+	@include max-media(768px) {
+		padding-bottom: 40px;
+		&__bg {
+			opacity: 0.3;
+		}
+	}
+	@include max-media(500px) {
+		&__content {
+			width: 100%;
+		}
+		.mona-content {
+			h1 {
+				max-width: 100%;
+			}
+			> div {
+				column-count: 1;
+				column-gap: 0;
+			}
+			p {
+				width: 100%;
+			}
+		}
+	}
+}
+.info-2 {
+	.info__content > p {
+		margin-bottom: 65px;
+	}
+	.info__list {
+		&-item {
+			padding: 20px 0;
+			border-top: 1px solid $border-cl;
+			border-bottom: 1px solid $border-cl;
+		}
+	}
+	.col {
+		width: calc(100% / 12 * 3);
+		&:nth-child(n + 2) {
+			width: calc(100% / 12 * 4);
+		}
+		&:last-child {
+			width: calc(100% / 12 * 5);
+		}
+	}
+	.heading {
+		margin-bottom: 20px;
+		.main-title {
+			margin-bottom: 8px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	@include max-media(768px) {
+		.info__content > p {
+			margin-bottom: 35px;
+		}
+	}
+	@include max-media(500px) {
+		.info__content > p {
+			margin: 15px 0;
+		}
+		.info__list {
+			&-item {
+				padding: 15px 0;
+			}
+		}
+		.cols {
+			margin: -7.5px;
+		}
+		.col {
+			padding: 7.5px;
+			width: 100% !important;
+			.heading {
+				margin-bottom: 15px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+.info-3 {
+	.col {
+		width: calc(100% / 12 * 3);
+	}
+	.col:last-child {
+		display: flex;
+		justify-content: space-between;
+		width: calc(100% / 12 * 9);
+		> div:first-child {
+			width: calc(100% / 3 * 2 - 15px);
+		}
+	}
+	.info__content {
+		p {
+			opacity: 0.7;
+			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	@include max-media(768px) {
+		.col {
+			width: calc(100% / 12 * 5);
+		}
+		.col:last-child {
+			flex-direction: column-reverse;
+			width: calc(100% / 12 * 7);
+			> div:first-child {
+				width: calc(100%);
+			}
+		}
+		.info__content p:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+	@include max-media(500px) {
+		.cols {
+			flex-direction: column-reverse;
+		}
+		.col,
+		.col:last-child {
+			width: 100%;
+		}
+	}
+}
+.info__aside {
+	&-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 0;
+		border-bottom: 2px solid $border-cl;
+		&:last-child {
+			border: 0;
+		}
+	}
+	&-img {
+		width: 60px;
+		height: 60px;
+		margin-right: 10px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.heading {
+		width: calc(100% - 70px);
+		.main-title {
+			margin-bottom: 10px;
+		}
+	}
+}
+.info__avatar {
+	min-width: 150px;
+	width: calc(100% / 3 * 1 - 15px);
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+	@include max-media(768px) {
+		margin: 0 auto 10px;
+	}
+}
+.info-4 {
+	padding-bottom: 96px;
+	.col {
+		width: calc(100% / 3);
+	}
+	.info__content > p {
+		margin-bottom: 30px;
+	}
+	.info__list-img {
+		margin-bottom: 15px;
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+	@include max-media(1024px) {
+		padding-bottom: 60px;
+	}
+	@include max-media(768px) {
+		padding-bottom: 40px;
+	}
+	@include max-media(500px) {
+		.col {
+			width: 100%;
+		}
+	}
+}

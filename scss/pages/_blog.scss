@@ -1,0 +1,147 @@
+.blog {
+	&__breadcrumb {
+		margin-bottom: 30px;
+		border-bottom: 1px solid $border-cl;
+	}
+	.breadcrumb {
+		position: relative;
+	}
+	.left {
+		width: calc(100% / 12 * 8);
+		> div {
+			margin-bottom: 40px;
+		}
+		> div:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.right {
+		width: calc(100% / 12 * 4);
+	}
+	&__sidebar {
+		> div > .heading > .main-title {
+			margin-bottom: 0;
+			padding-bottom: 15px;
+			border-bottom: 1px solid $border-cl;
+		}
+		> div:not(:last-child) {
+			margin-bottom: 40px;
+		}
+		.pt-content {
+			> * {
+				padding-top: 15px;
+			}
+			p {
+				opacity: 0.7;
+			}
+		}
+	}
+	&__item {
+		&:not(:last-child),
+		> div:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		.desc {
+			max-width: 700px;
+			margin-bottom: 15px;
+		}
+		&-author {
+			display: flex;
+			justify-content: flex-start;
+			padding: 15px 0;
+			border-top: 1px solid $border-cl;
+			border-bottom: 1px solid $border-cl;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-transform: uppercase;
+				font-size: 13px;
+				color: rgba($color: $black-cl, $alpha: 0.4);
+				transition: $t1;
+				@include lh(20, 13);
+				img {
+					margin-right: 5px;
+				}
+				&:hover {
+					color: $black-cl;
+				}
+			}
+			> p {
+				margin-right: 30px;
+			}
+		}
+	}
+	&__knowledge {
+		.cols {
+			margin: -10px -15px;
+		}
+		.col {
+			padding: 10px 15px;
+			width: 50%;
+		}
+	}
+	@include max-media(500px) {
+		.left {
+			width: 100%;
+			> div:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+		.right {
+			width: 100%;
+		}
+		&__item {
+			&-author {
+				flex-wrap: wrap;
+				> p {
+					margin-right: 5px;
+				}
+			}
+		}
+		&__knowledge {
+			.col {
+				width: 100%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		&__sidebar {
+			> div:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+.blog-detail {
+	.left {
+		> div {
+			margin-bottom: 30px;
+		}
+	}
+	.desc {
+		margin: 0;
+		max-width: 750px;
+	}
+	&__content-img {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		img {
+			width: calc(50% - 15px);
+			height: auto;
+			object-fit: cover;
+		}
+	}
+	@include max-media(500px) {
+		&__content-img {
+			margin-bottom: 10px;
+			img {
+				width: calc(50% - 7.5px);
+			}
+		}
+	}
+}

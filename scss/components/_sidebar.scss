@@ -1,0 +1,121 @@
+.product__btn-sidebar {
+	z-index: 700;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	height: calc(100% - 35px);
+	pointer-events: none;
+	display: none;
+	.fa {
+		position: sticky;
+		top: 80px;
+		width: 35px;
+		height: 35px;
+		pointer-events: auto;
+		background-color: $second-cl;
+		color: $main-cl;
+		font-size: 16px;
+		box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.16);
+		@include mid-flex;
+	}
+	@include max-media(500px) {
+		display: block;
+	}
+}
+.product__sidebar {
+	margin-bottom: 35px;
+	> .main-title {
+		padding-bottom: 10px;
+		margin-bottom: 15px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $border-cl;
+		cursor: pointer;
+		i {
+			opacity: 0.3;
+			pointer-events: none;
+		}
+	}
+	/* give div or ul hidden */
+	p + div,
+	p + ul {
+		display: none;
+	}
+
+	li {
+		@include lh(40, 15);
+		div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		//when user click on the icon then show sub cate
+		&.--show {
+			> div > a {
+				font-weight: bold;
+				opacity: 1;
+			}
+			.badge {
+				background-color: $second-cl;
+			}
+		}
+		a {
+			opacity: 0.6;
+		}
+		i,
+		img {
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		//if don't have minus or plus icon
+		div:only-child {
+			margin-left: 22px;
+		}
+	}
+
+	/* for cate has sub menu */
+	.sub-sidebar {
+		display: none;
+		padding-left: 15px;
+		div {
+			justify-content: flex-start;
+		}
+		li.--show img {
+			transform: rotate(90deg);
+		}
+	}
+	.sidebar-stop.--show > .sub-sidebar {
+		display: block;
+	}
+
+	/* the quantity item in cate */
+	.badge {
+		margin-left: auto;
+		width: 32px;
+		height: 20px;
+		text-align: center;
+		font-size: 10px;
+		line-height: 20px;
+		border-radius: 999px;
+		background-color: rgba($color: $black-cl, $alpha: 0.1);
+	}
+	/*
+    1. ul or div display none
+    2. when user click on the minus icon
+    3. ul or div display block
+    4. icon opacity to 1
+  */
+	&.--show {
+		p + div,
+		p + ul {
+			display: block;
+		}
+		> .main-title i {
+			opacity: 1;
+		}
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

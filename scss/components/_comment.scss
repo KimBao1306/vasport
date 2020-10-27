@@ -1,0 +1,53 @@
+.comment {
+	&__wrap {
+		display: flex;
+	}
+	&__form {
+		position: relative;
+		margin-bottom: 25px;
+		input {
+			background: transparent;
+			&::placeholder {
+				color: rgba($color: $black-cl, $alpha: 0.5);
+			}
+		}
+		.main-btn {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+	&__img {
+		margin-right: 15px;
+	}
+	&__content {
+		width: calc(100% - 55px);
+		margin-bottom: 25px;
+		.name {
+			font-weight: bold;
+		}
+		.status {
+			color: rgba($color: $black-cl, $alpha: 0.3);
+			margin-bottom: 8px;
+		}
+		.desc.desc {
+			margin-bottom: 12px;
+		}
+		.readmore-btn {
+			font-size: 13px;
+			text-transform: uppercase;
+			text-decoration: underline;
+			color: $black-cl;
+			@include lh(15, 13);
+		}
+	}
+	&__reply {
+		padding-left: 55px;
+	}
+
+	@include max-media(500px) {
+		&__reply {
+			padding-left: 30px;
+		}
+	}
+}

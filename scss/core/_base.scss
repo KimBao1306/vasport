@@ -1,0 +1,204 @@
+//base scss for project
+* {
+	box-sizing: border-box;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+html,
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	color: $cl-body;
+	font-family: $font-body;
+	font-size: $fz-body;
+	line-height: $lh-body;
+	-webkit-font-smoothing: antialiased;
+	@include transition($t1);
+	@include custom-scrollbar();
+}
+body {
+	overflow-x: hidden;
+}
+.wrapper {
+	max-width: $max-width;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
+.container {
+	margin: 0 auto;
+	padding: 0 $padding;
+	width: $container-width;
+	max-width: 100%;
+}
+.cols {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	margin: (-$padding);
+}
+.col {
+	padding: $padding;
+}
+::selection {
+	background-color: $second-cl;
+	color: $main-cl;
+}
+a {
+	text-decoration: none;
+	display: block;
+	outline: none;
+	cursor: pointer;
+	color: $black-cl;
+	&:hover,
+	&:focus {
+		color: $second-cl;
+	}
+}
+table {
+	max-width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+	font-weight: bold;
+	font-family: $font-title;
+}
+strong,
+b,
+.bold {
+	font-weight: bold;
+}
+i,
+.italic {
+	font-style: italic;
+}
+sup {
+	vertical-align: top;
+	font-size: 70%;
+}
+img,
+iframe {
+	display: block;
+	// margin: 0 auto;
+	max-width: 100%;
+	border: 0;
+	vertical-align: middle;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	image-rendering: auto;
+}
+.table-responsive {
+	max-width: 100%;
+	overflow: auto;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-justify {
+	text-align: justify;
+}
+.img-w-100 {
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+}
+.img-h-100 {
+	img {
+		width: auto;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+	@include max-media(767px) {
+		margin-bottom: 10px;
+	}
+}
+.mb-25 {
+	margin-bottom: 25px;
+	@include max-media(767px) {
+		margin-bottom: 15px;
+	}
+}
+.mb-30 {
+	margin-bottom: 30px;
+	@include max-media(767px) {
+		margin-bottom: 20px;
+	}
+}
+.mb-50 {
+	margin-bottom: 50px;
+	@include max-media(767px) {
+		margin-bottom: 40px;
+	}
+}
+.pt-0 {
+	padding-top: 0;
+}
+.pb-0 {
+	padding-bottom: 0;
+}
+.p-0 {
+	padding: 0;
+}
+.mt-0 {
+	margin-top: 0;
+}
+.mb-0 {
+	margin-bottom: 0;
+}
+.m-0 {
+	margin: 0;
+}
+.fw-bold {
+	font-weight: bold;
+}
+.flex-row-reverse {
+	flex-direction: row-reverse !important;
+}
+.flex-column-reverse {
+	flex-direction: column-reverse !important;
+}
+.main-cl {
+	color: $main-cl !important;
+}
+.second-cl {
+	color: $second-cl !important;
+}
+
+.sf {
+	font-family: 'SFP';
+}
+
+.wrap-relative {
+	position: relative;
+}
+@include max-media(500px) {
+	.wow.animated {
+		animation-delay: unset !important;
+	}
+}

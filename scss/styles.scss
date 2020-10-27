@@ -1,0 +1,53 @@
+/* FONTS */
+@import url('../fonts/Roboto/stylesheet.css');
+@import url('../fonts/Oswald/stylesheet.css');
+@import url('../fonts/SFPro/stylesheet.css');
+/* LIBRARIES */
+@import url('../js/Font-awesome-4.7.0/css/font-awesome.min.css');
+@import url('../js/swiper-5.4.3/package/css/swiper.min.css');
+@import url('../js/Magnific-Popup-master/magnific-popup.css');
+@import url('../js/wow/animate.min.css');
+// @import url('../js/lightgallery.js-master/dist/css/lightgallery.min.css');
+// @import url('../js/datepicker-master/dist/datepicker.min.css');
+
+/* Core variables and mixins - structure from NghiaTran */
+@import './core/reset';
+@import './core/variables';
+@import './core/mixins';
+@import './core/base';
+@import './core/animation';
+@import './core/mona';
+
+
+/* Components */
+@import './components/sec';
+@import './components/logo';
+@import './components/header';
+@import './components/footer';
+@import './components/customSwiper';
+@import './components/banner';
+@import './components/button';
+@import './components/form-control';
+@import './components/heading';
+@import './components/breadcrumb';
+@import './components/overlay';
+@import './components/pagination';
+@import './components/partners';
+@import './components/product';
+@import './components/blog';
+@import './components/rating-star';
+@import './components/ratio';
+@import './components/social-nav';
+@import './components/tabs';
+@import './components/comment';
+@import './components/flash-sale';
+@import './components/sidebar';
+@import './components/popup';
+
+/* Pages */
+@import './pages/home';
+@import './pages/policy';
+@import './pages/info';
+@import './pages/brand';
+@import './pages/blog';
+@import './pages/product';

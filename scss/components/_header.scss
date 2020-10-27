@@ -1,0 +1,373 @@
+.header {
+	position: relative;
+	width: 100%;
+	z-index: 900;
+	background-color: $white-cl;
+	@include transition($t2);
+	// TOP
+	&__top {
+		padding: 12px 0;
+		font-family: 'SFP';
+		font-size: 13px;
+		border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+		opacity: 0.5;
+		@include lh(17, 13);
+		.wrap {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		p {
+			margin-right: auto;
+		}
+		span {
+			display: inline-block;
+			position: relative;
+			i {
+				margin-right: 10px;
+			}
+			&:first-of-type {
+				margin-right: 40px;
+				&:first-of-type:after {
+					content: '';
+					position: absolute;
+					right: -20px;
+					top: 0;
+					width: 1px;
+					height: 100%;
+					background-color: $black-cl;
+					opacity: 0.2;
+				}
+			}
+		}
+	}
+	// MIDDLE
+	&__middle {
+		background-color: $white-cl;
+		padding: 10px 0;
+		.wrap {
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__search {
+		position: relative;
+		width: 40.171%;
+		flex-shrink: 1;
+		margin-right: 33px;
+		margin-left: auto;
+		input {
+			padding-right: 0;
+			height: 48px;
+			border: none;
+			color: #000;
+			@include br(999px);
+			transition: $t1;
+			&::placeholder {
+				color: rgba($color: #000000, $alpha: 0.5);
+				opacity: 1;
+			}
+			&:focus {
+				width: 100%;
+			}
+		}
+		button {
+			padding: 10px 20px;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			border: none;
+			background: transparent;
+			outline: none;
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+	}
+	&__user {
+		display: flex;
+		> div {
+			position: relative;
+			margin-right: 20px;
+			> ul {
+				position: absolute;
+				top: calc(100% + 2px);
+				right: 0;
+				width: max-content;
+				transition: $t1;
+				transform: translateY(5px);
+				z-index: 999;
+				@include hidden;
+			}
+			&:hover {
+				> ul {
+					transform: translateY(-5px);
+					@include visible;
+				}
+			}
+		}
+		img {
+			margin-right: 5px;
+			object-fit: cover;
+			max-width: 100%;
+		}
+		a {
+			color: $black-cl;
+			display: flex;
+			align-items: center;
+			@include lh(18, 15);
+			&:hover {
+				color: $second-cl;
+			}
+		}
+		.cart {
+			> a:after {
+				content: '';
+				position: absolute;
+				top: -5px;
+				left: 14px;
+				width: 14px;
+				height: 14px;
+				border-radius: 100%;
+				background-color: $second-cl;
+			}
+			.c-product__wrap:nth-of-type(n + 1) .c-product__item {
+				margin-top: 0;
+				box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+			}
+			&-del {
+				color: red;
+				font-size: 16px;
+				width: 30px;
+				@include mid-flex;
+				&:hover {
+					color: red;
+				}
+			}
+		}
+		.auth {
+			margin-right: 0;
+			li {
+				background: #f8f8f8;
+				padding: 15px;
+			}
+			li:first-child {
+				margin-top: 15px;
+				border-bottom: 1px solid $border-cl;
+			}
+		}
+	}
+
+	// BOTTOM
+	&__bottom {
+		background-color: $black-cl;
+
+		.wrap {
+			@include flex(row, center, center);
+		}
+	}
+
+	/* header list */
+	&__list {
+		@include flex(row, center);
+		> li {
+			> a {
+				padding: 15px 20px;
+				height: 100%;
+				color: $white-cl;
+				font-size: 17px;
+				font-weight: bold;
+				text-transform: uppercase;
+				@include transition($t1);
+				@include lh(20, 17);
+				@include flex(row, space-between, center);
+			}
+			&.--active {
+				> a {
+					color: $black-cl;
+					background-color: $second-cl;
+				}
+				&:hover a {
+					color: $black-cl;
+				}
+			}
+			//chỉ hover trên laptop
+			@include min-media(1025px) {
+				&:hover {
+					> a {
+						color: $second-cl;
+					}
+				}
+			}
+		}
+		> li.logo {
+			display: none;
+		}
+	}
+
+	.dropdown {
+		position: relative;
+		//hover in desktop
+		@include min-media(1025px) {
+			&:hover {
+				> .sub-menu {
+					display: block;
+				}
+			}
+			.fa.fa-angle-down {
+				pointer-events: none;
+			}
+		}
+		a {
+			font-weight: bold;
+			text-transform: uppercase;
+			@include transition($t1);
+			@include flex(row, space-between, center);
+		}
+
+		.fa.fa-angle-down {
+			width: 20px;
+			height: 20px;
+			font-weight: bold;
+			@include mid-flex;
+		}
+	}
+	.sub-menu {
+		position: absolute;
+		display: none;
+		left: 0;
+		top: 100%;
+		width: 200px;
+		background: $second-cl;
+		a {
+			color: $black-cl;
+			padding: 15px;
+			@include min-media(1025px) {
+				&:hover {
+					color: $second-cl;
+					background-color: $main-cl;
+				}
+			}
+		}
+		.sub-menu {
+			top: 0;
+			left: 100%;
+		}
+	}
+
+	@include max-media(1024px) {
+		&__bottom .wrap {
+			justify-content: flex-end;
+		}
+		//header list in mobile
+		&__list {
+			position: fixed;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 250px;
+			padding-top: 50px;
+			z-index: 903;
+			background-color: $second-cl;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			overflow: hidden auto;
+			@include transform(translateX(100%));
+			@include transition(transform $t1);
+			@include custom-scrollbar;
+			li {
+				width: 100%;
+				a {
+					height: auto;
+					color: $black-cl;
+					border-bottom: 2px solid $black-cl;
+				}
+			}
+			li.logo {
+				display: block;
+				height: auto;
+				width: 100%;
+				background-color: $white-cl;
+				a {
+					border: none;
+				}
+			}
+			&.--active {
+				@include transform(translateX(0));
+			}
+		}
+		.sub-menu {
+			position: relative;
+			display: none;
+			width: 100%;
+			left: 0 !important;
+			top: 0 !important;
+			> li > a {
+				color: $black-cl;
+				padding-left: 35px;
+			}
+		}
+	}
+	/* header list */
+
+	&__mobile {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		display: none;
+	}
+	//menu scroll
+	&.--fixed .header__bottom {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		@include animation(fixedMenu $t2);
+	}
+
+	@include max-media(1024px) {
+		&__mobile {
+			display: block;
+		}
+		&__search {
+			margin-right: 15px;
+		}
+		&__user {
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+	@include max-media(768px) {
+		&__search {
+			margin: 0;
+			order: 1;
+		}
+		&__middle {
+			.wrap {
+				flex-wrap: wrap;
+				justify-content: space-between;
+				> div:nth-child(2) {
+					margin-top: 10px;
+					width: 100%;
+				}
+			}
+		}
+	}
+	@include max-media(500px) {
+		&__top {
+			display: none;
+		}
+		.logo {
+			width: 150px;
+		}
+		&__user {
+			justify-content: center;
+			> div > a > p {
+				display: none;
+			}
+		}
+		.cart > ul {
+			width: 280px;
+			right: -40px;
+		}
+	}
+}

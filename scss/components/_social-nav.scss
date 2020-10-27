@@ -1,0 +1,14 @@
+.social-nav {
+	display: flex;
+	flex-wrap: wrap;
+	li {
+		a {
+			display: block;
+			width: 25px;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+			transition: 0.3s;
+		}
+	}
+}

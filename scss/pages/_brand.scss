@@ -1,0 +1,64 @@
+.brand {
+	padding: 90px 0;
+	> .container > div:not(:last-child) {
+		margin-bottom: 30px;
+	}
+	.wrap-relative .heading {
+		max-width: calc(100% / 12 * 6);
+	}
+	&__bg {
+		position: absolute;
+		top: -175px;
+		right: 0;
+		img {
+			height: 100%;
+			width: auto;
+			object-fit: cover;
+		}
+	}
+
+	.swiper-wrapper {
+		margin: 0;
+	}
+	.swiper-slide {
+		padding: 0;
+		width: calc(100% / 6);
+	}
+	.swiper-container {
+		padding: 2px;
+	}
+	@include max-media(1024px) {
+		padding: 60px 0;
+		.swiper-slide {
+			width: 20%;
+		}
+	}
+	@include max-media(768px) {
+		padding: 40px 0;
+		.swiper-slide {
+			width: 25%;
+		}
+		.wrap-relative .heading {
+			max-width: calc(100% / 12 * 8);
+		}
+		&__bg {
+			opacity: 0.3;
+			z-index: -1;
+		}
+	}
+	@include max-media(500px) {
+		.swiper-slide {
+			width: 50%;
+		}
+		.wrap-relative .heading {
+			max-width: 100%;
+		}
+		&__bg {
+			top: -80px;
+			img {
+				height: auto;
+				width: 100%;
+			}
+		}
+	}
+}

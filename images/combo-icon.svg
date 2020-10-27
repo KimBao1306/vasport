@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_427" data-name="Rectangle 427" width="14" height="14" transform="translate(987 1021)" fill="#ff1515" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="combo-icon" transform="translate(-987 -1021)" clip-path="url(#clip-path)">
+    <g id="gift" transform="translate(985.322 1019.32)">
+      <path id="Path_110" data-name="Path 110" d="M8.1,7.5h-5.2a.354.354,0,0,0-.354.354v7.147a.629.629,0,0,0,.629.629H8.1Zm6.324,0H9.278v8.129h5.144a.354.354,0,0,0,.354-.354V7.856a.355.355,0,0,0-.354-.353Zm1.246-1.159H1.695a.016.016,0,0,1-.017-.017V3.449a.011.011,0,0,1,.01-.01h13.98a.011.011,0,0,1,.01.01V6.336a.009.009,0,0,1-.01.008Z" fill="#ff1515"/>
+      <path id="Path_111" data-name="Path 111" d="M11.444,2.205A1.287,1.287,0,0,0,9.636,2.01l-.869.7a.12.12,0,0,1-.146,0l-.9-.7A1.286,1.286,0,0,0,6.136,4.032L7.369,5a1.169,1.169,0,0,0,1.319.083A1.166,1.166,0,0,0,10.027,5l1.222-.985a1.29,1.29,0,0,0,.195-1.81Z" fill="#ff1515"/>
+    </g>
+  </g>
+</svg>

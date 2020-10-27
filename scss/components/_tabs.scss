@@ -1,0 +1,76 @@
+.tabs {
+	display: flex;
+	margin-bottom: 20px;
+	li {
+		position: relative;
+		background-color: #e5e5e5;
+		height: 60px;
+		width: 367px;
+		box-shadow: 20px 15px 25px rgba($color: $black-cl, $alpha: 0.16);
+		@for $i from 1 through 3 {
+			&:nth-last-child(#{$i}) {
+				z-index: $i;
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -30px;
+			z-index: 1;
+
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 30px 0 30px 30px;
+			border-color: transparent transparent transparent #e5e5e5;
+		}
+		&:nth-of-type(n + 2) .main-title {
+			padding-left: 60px;
+		}
+	}
+	li.--active {
+		background-color: $third-cl;
+		&:after {
+			border-color: transparent transparent transparent $third-cl;
+		}
+		.main-title {
+			color: $second-cl;
+		}
+	}
+	.main-title {
+		padding: 15px 35px;
+		margin-bottom: 0;
+		height: 100%;
+		color: $black-cl;
+	}
+	@include max-media(500px) {
+		li {
+			width: auto;
+			height: 50px;
+			&:after {
+				right: -25px;
+				border-width: 25px 0 25px 25px;
+			}
+		}
+		.main-title {
+			font-size: 16px;
+		}
+	}
+	&.no-box-shadow li {
+		box-shadow: none;
+	}
+}
+.tabs-2 {
+	position: absolute;
+}
+.tab-link {
+	cursor: pointer;
+}
+.tab-content {
+	display: none;
+	&.--active {
+		display: block;
+		animation: fadeInUp $t2 forwards;
+	}
+}

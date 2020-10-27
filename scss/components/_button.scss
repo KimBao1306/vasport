@@ -1,0 +1,127 @@
+.main-btn {
+	position: relative;
+	display: inline-block;
+	line-height: 1.2;
+	padding: 14px 16px 12px 21px;
+	font-weight: bold;
+	color: $main-cl;
+	background-color: $second-cl;
+	text-transform: uppercase;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
+	@include transition($t2);
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background-color: $main-cl;
+		transform: scaleX(0);
+		transform-origin: center;
+		@include transition($t2);
+	}
+	&:hover {
+		color: $second-cl;
+		&::after {
+			transform: scaleX(1);
+			left: 0;
+			width: 100%;
+		}
+	}
+}
+
+.readmore-btn {
+	font-weight: bold;
+	color: $black-cl;
+	@include lh(20, 15);
+	&:hover {
+		color: $second-cl;
+	}
+}
+
+.hamburger-btn {
+	position: relative;
+	z-index: 901;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	.bar {
+		position: relative;
+		background: $second-cl;
+		transition: all 0ms 300ms;
+		&,
+		&::before,
+		&::after {
+			width: 35px;
+			height: 3px;
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			background: $second-cl;
+		}
+		&::before {
+			bottom: 10px;
+			transition: bottom $t1 $t1 cubic-bezier(0.23, 1, 0.32, 1),
+				transform $t1 cubic-bezier(0.23, 1, 0.32, 1);
+		}
+		&::after {
+			top: 10px;
+			transition: top $t1 $t1 cubic-bezier(0.23, 1, 0.32, 1),
+				transform $t1 cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	}
+	&.--active {
+		.bar {
+			background: rgba(255, 255, 255, 0);
+			&::before {
+				bottom: 0;
+				transform: rotate(-45deg);
+				background-color: #fff;
+				transition: bottom $t1 cubic-bezier(0.23, 1, 0.32, 1),
+					transform $t1 $t1 cubic-bezier(0.23, 1, 0.32, 1);
+			}
+			&::after {
+				top: 0;
+				transform: rotate(45deg);
+				background-color: #fff;
+				transition: top $t1 cubic-bezier(0.23, 1, 0.32, 1),
+					transform $t1 $t1 cubic-bezier(0.23, 1, 0.32, 1);
+			}
+		}
+	}
+}
+
+.scroll-top {
+	position: fixed;
+	right: 15px;
+	bottom: 50px;
+	width: 40px;
+	height: 40px;
+	z-index: 899;
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: $main-cl;
+	border: 1px solid $main-cl;
+	color: $white-cl;
+	box-shadow: 0 5px 15px 0 rgba(#000, 0.2);
+	cursor: pointer;
+
+	@include transform(translateY(10px));
+	@include transition($t2);
+	@include hidden;
+	@include mid-flex;
+	&.--show {
+		@include visible;
+		@include transform(translateY(0));
+	}
+}

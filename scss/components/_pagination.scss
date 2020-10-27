@@ -1,0 +1,30 @@
+.pagination {
+	margin-top: 25px;
+	@include flex(row, center, center);
+	li {
+		width: 35px;
+		height: 35px;
+		&.--active {
+			a {
+				background-color: $second-cl;
+				color: $black-cl;
+			}
+		}
+		&:hover {
+			a {
+				background-color: $second-cl;
+				color: $black-cl;
+			}
+		}
+	}
+	a {
+		height: 100%;
+		width: 100%;
+		font-weight: bold;
+		background-color: $white-cl;
+		color: rgba($color: $black-cl, $alpha: 0.6);
+		@include lh(24, 14);
+		@include mid-flex;
+		@include transition($t1);
+	}
+}

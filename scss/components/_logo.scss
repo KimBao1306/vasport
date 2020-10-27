@@ -1,0 +1,15 @@
+.logo {
+	width: 234px;
+	height: 70px;
+	@include flex(column, center);
+	@include transition($t1);
+	@include max-media(1024px) {
+		width: 200px;
+		height: 50px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+}
